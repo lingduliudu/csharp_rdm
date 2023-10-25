@@ -39,6 +39,7 @@ namespace WpfApp2{
         }
 
         private void OnMouseClick(object sender,MouseButtonEventArgs args){
+            RichBox.Width=MainToolBar.ActualWidth;
             Dispatcher.BeginInvoke(() =>{
                 Point position = Mouse.GetPosition(RichBox);
                 if (position == null) return;

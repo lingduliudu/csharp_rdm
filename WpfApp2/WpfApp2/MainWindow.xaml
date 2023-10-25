@@ -44,7 +44,7 @@
                 <StackPanel Name="LineNumGrid" Background="#CFCFCF" Margin="0" >
                 </StackPanel>
                 <ScrollViewer Name="MainScrollViewer" HorizontalScrollBarVisibility="Auto"  VerticalScrollBarVisibility="Auto"  Background="Black" HorizontalAlignment="Left" VerticalAlignment="Top" >
-                <t:TRichTextBox x:Name="RichBox" Width="1000" HorizontalScrollBarVisibility="Auto"  FontSize="{Binding FontSize}" KeyUp="OnKeyUp" PreviewMouseDown="OnMouseClick" TextChanged="ChangeRichText" Margin="0" Padding="0" >
+                <t:TRichTextBox x:Name="RichBox"  HorizontalScrollBarVisibility="Auto"  FontSize="{Binding FontSize}" KeyUp="OnKeyUp" PreviewMouseDown="OnMouseClick" TextChanged="ChangeRichText" Margin="0" Padding="0" >
                         <FlowDocument LineHeight="0.01" Name="FlowDocument" Background="Azure" PagePadding="0" ></FlowDocument>
                 </t:TRichTextBox>
                 </ScrollViewer>
