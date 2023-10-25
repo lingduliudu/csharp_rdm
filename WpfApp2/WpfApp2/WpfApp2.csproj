@@ -13,4 +13,15 @@
       <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="assert\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="assert\4584440.png" />
+      <Resource Include="assert\4584440.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+    </ItemGroup>
+
 </Project>

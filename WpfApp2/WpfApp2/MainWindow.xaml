@@ -21,9 +21,11 @@
             <ColumnDefinition Width="99*" />
         </Grid.ColumnDefinitions>
         <ToolBar Name="MainToolBar" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Padding="10,0"  Header="" VerticalAlignment="Center" >
-            <Button  Margin="0,0,3,0" Content="+" />
+            <Button  Margin="0,0,3,0">
+                <Image Source="assert/4584440.png"/>
+            </Button>
             <Button  Content="这是一个按钮" Margin="0,0,3,0"/>
-            <Rectangle Width="30"   Height="30" Fill="Gainsboro" MouseMove="OnMouseMove"></Rectangle>
+            <!-- <Rectangle Width="30"   Height="30" Fill="Gainsboro" MouseMove="OnMouseMove"></Rectangle> -->
         </ToolBar>
         <TreeView Name="MainTree" Grid.Row="1" Grid.Column="0" Width="200" >
             <TreeViewItem Header="111">
@@ -38,12 +40,12 @@
             </TreeViewItem>
         </TreeView>
         <GridSplitter Grid.Column="0" Grid.Row="1" Width="2" ></GridSplitter>
-        <ScrollViewer Name="MainScrollViewer" HorizontalScrollBarVisibility="Auto"  Grid.Row="1" Grid.Column="1"  Background="Black" HorizontalAlignment="Left" VerticalAlignment="Top" >
+        <ScrollViewer Name="MainScrollViewer" HorizontalScrollBarVisibility="Auto"  VerticalScrollBarVisibility="Auto" Grid.Row="1" Grid.Column="1"  Background="Black" HorizontalAlignment="Left" VerticalAlignment="Top" >
             <DockPanel>
             <StackPanel Name="LineNumGrid" Background="#CFCFCF" Margin="0" >
                 </StackPanel>
-                <t:TRichTextBox x:Name="RichBox" Width="{Binding ElementName=MainScrollViewer,Path=ActualWidth}"    FontSize="{Binding FontSize}" KeyUp="OnKeyUp" PreviewMouseDown="OnMouseClick" TextChanged="ChangeRichText" Margin="0" Padding="0" >
-                        <FlowDocument LineHeight="0.01" Name="FlowDocument" Background="Azure" PagePadding="0"  ></FlowDocument>
+                <t:TRichTextBox x:Name="RichBox" Width="{Binding ElementName=MainScrollViewer,Path='300'}"   FontSize="{Binding FontSize}" KeyUp="OnKeyUp" PreviewMouseDown="OnMouseClick" TextChanged="ChangeRichText" Margin="0" Padding="0" >
+                        <FlowDocument LineHeight="0.01" Name="FlowDocument" Background="Azure" PagePadding="0" ></FlowDocument>
                 </t:TRichTextBox>
             </DockPanel>
         </ScrollViewer>
