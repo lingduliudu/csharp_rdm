@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
@@ -10,10 +6,11 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Shapes;
-using System.Windows.Threading;
 using WpfApp2.component;
 using WpfApp2.effect;
 using WpfApp2.model;
+using WpfApp2.window;
+using Window = System.Windows.Window;
 
 namespace WpfApp2{
     public partial class MainWindow : Window{
@@ -122,6 +119,11 @@ namespace WpfApp2{
          */
         private  void OnMouseMove(object sender,MouseEventArgs args){
             (sender as Rectangle).Fill = Brushes.Red;
+        }
+        
+        private void OpenAddWindow(object sender, RoutedEventArgs e){
+            AddLinkWindow linkWindow = new AddLinkWindow();
+            linkWindow.ShowDialog();
         }
     }
 

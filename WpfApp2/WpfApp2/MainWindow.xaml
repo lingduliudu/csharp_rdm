@@ -7,26 +7,30 @@
         xmlns:t="clr-namespace:WpfApp2.component"
         mc:Ignorable="d"
         Title="MainWindow"
-        xmlns:model="clr-namespace:WpfApp2.model" WindowState="Maximized" ResizeMode="CanMinimize" >
+        Width="800"
+        Height="500"
+        xmlns:model="clr-namespace:WpfApp2.model" >
     <Window.DataContext>
         <model:MainModel/>
     </Window.DataContext>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="3*" />
+            <RowDefinition Height="33" />
             <RowDefinition Height="99*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="160"/>
             <ColumnDefinition Width="99*" />
         </Grid.ColumnDefinitions>
         <ToolBar Name="MainToolBar" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Padding="10,0"  Header="" VerticalAlignment="Center" >
-            <Button  Margin="0,0,3,0">
+            <Button  Margin="0,0,3,0" Click="OpenAddWindow">
                 <Image Source="assert/add.png"/>
             </Button>
-            <Button  Content="这是一个按钮" Margin="0,0,3,0"/>
+            <Button  Margin="0,0,3,0" Click="OpenAddWindow">
+                <Image Source="assert/setup.png"/>
+            </Button>
         </ToolBar>
-        <TreeView Name="MainTree" Grid.Row="1" Grid.Column="0" Width="160" >
+        <TreeView Name="MainTree" Grid.Row="1" Grid.Column="0" Width="160" HorizontalAlignment="Left" >
             <TreeViewItem Header="111">
                 <TreeViewItem Header="111"/>
                 <TreeViewItem Header="222"/>
@@ -39,7 +43,6 @@
             </TreeViewItem>
         </TreeView>
         <GridSplitter Grid.Column="0" Grid.Row="1" Width="2" ></GridSplitter>
-        
             <DockPanel  Grid.Row="1" Grid.Column="1">
                 <StackPanel Name="LineNumGrid" Background="#CFCFCF" Margin="0" >
                 </StackPanel>
