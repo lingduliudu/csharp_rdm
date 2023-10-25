@@ -3,35 +3,46 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:hc="https://handyorg.github.io/handycontrol"
         xmlns:local="clr-namespace:WpfApp2"
         xmlns:t="clr-namespace:WpfApp2.component"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
+        Title="MainWindow"
         xmlns:model="clr-namespace:WpfApp2.model" WindowState="Maximized" ResizeMode="CanMinimize" >
     <Window.DataContext>
         <model:MainModel/>
     </Window.DataContext>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="30" />
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="99*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="150"/>
-            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="99*" />
         </Grid.ColumnDefinitions>
-        <ToolBar Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Padding="10,0" Header="" VerticalAlignment="Center" >
-            <Button Style="{StaticResource ButtonInfo}" Margin="0,0,3,0" Content="这是一个按钮" hc:BorderElement.CornerRadius="0"/>
+        <ToolBar Name="MainToolBar" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Padding="10,0"  Header="" VerticalAlignment="Center" >
+            <Button  Margin="0,0,3,0" Content="+" />
             <Button  Content="这是一个按钮" Margin="0,0,3,0"/>
             <Rectangle Width="30"   Height="30" Fill="Gainsboro" MouseMove="OnMouseMove"></Rectangle>
         </ToolBar>
+        <TreeView Name="MainTree" Grid.Row="1" Grid.Column="0" Width="200" >
+            <TreeViewItem Header="111">
+                <TreeViewItem Header="111"/>
+                <TreeViewItem Header="222"/>
+                <TreeViewItem Header="333"/>
+            </TreeViewItem>
+            <TreeViewItem Header="222">
+                <TreeViewItem Header="111"/>
+                <TreeViewItem Header="222"/>
+                <TreeViewItem Header="333"/>
+            </TreeViewItem>
+        </TreeView>
         <GridSplitter Grid.Column="0" Grid.Row="1" Width="2" ></GridSplitter>
-        <ScrollViewer Grid.Row="1" Grid.Column="1"  Background="Black">
+        <ScrollViewer Name="MainScrollViewer" HorizontalScrollBarVisibility="Auto"  Grid.Row="1" Grid.Column="1"  Background="Black" HorizontalAlignment="Left" VerticalAlignment="Top" >
             <DockPanel>
-                <StackPanel Name="LineNumGrid" Background="#CFCFCF" Margin="0" >
+            <StackPanel Name="LineNumGrid" Background="#CFCFCF" Margin="0" >
                 </StackPanel>
-                <t:TRichTextBox x:Name="RichBox"    FontSize="{Binding FontSize}" KeyUp="OnKeyUp" PreviewMouseDown="OnMouseClick" TextChanged="ChangeRichText" Margin="0" Padding="0" HorizontalScrollBarVisibility="Auto">
+                <t:TRichTextBox x:Name="RichBox" Width="{Binding ElementName=MainScrollViewer,Path=ActualWidth}"    FontSize="{Binding FontSize}" KeyUp="OnKeyUp" PreviewMouseDown="OnMouseClick" TextChanged="ChangeRichText" Margin="0" Padding="0" >
                         <FlowDocument LineHeight="0.01" Name="FlowDocument" Background="Azure" PagePadding="0"  ></FlowDocument>
                 </t:TRichTextBox>
             </DockPanel>

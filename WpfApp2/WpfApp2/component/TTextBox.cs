@@ -1,13 +1,17 @@
-﻿using System.Windows.Controls;
+﻿using System.Collections.Generic;
+using System.Net.Mime;
+using System.Text.RegularExpressions;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Documents;
 
 namespace WpfApp2.component;
 
 public class TTextBox:TextBox{
-
-    /**
-     * @Description: 渲染内部字体
-     * @author Hao.Yuan
-     */
-    public void effectWord(string word){
+    
+    public void ITextBox(){
+        TextWrapping=TextWrapping.NoWrap;
     }
+
+    
 }

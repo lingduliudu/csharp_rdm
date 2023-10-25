@@ -21,11 +21,11 @@ public class TRichTextBox:RichTextBox{
     
     public TRichTextBox():base(){
         base.PreviewMouseMove+=PagePaddingZero;
+        Document.PageWidth = 800;
         
     }
     private void PagePaddingZero(object sender,MouseEventArgs args){
             Document.PagePadding=new Thickness(0,0,0,0);
-            
     }
     
     

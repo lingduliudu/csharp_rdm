@@ -19,7 +19,6 @@ namespace WpfApp2{
         public MainWindow(){
             InitializeComponent();
             ChangeRichText(RichBox, null);
-            RichBox.Width = 2000;
         }
 
         private void ChangeRichText(object sender, TextChangedEventArgs args){
