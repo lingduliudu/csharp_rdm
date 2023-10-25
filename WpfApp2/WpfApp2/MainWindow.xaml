@@ -26,7 +26,7 @@
             </Button>
             <Button  Content="这是一个按钮" Margin="0,0,3,0"/>
         </ToolBar>
-        <TreeView Name="MainTree" Grid.Row="1" Grid.Column="0" Width="200" >
+        <TreeView Name="MainTree" Grid.Row="1" Grid.Column="0" Width="160" >
             <TreeViewItem Header="111">
                 <TreeViewItem Header="111"/>
                 <TreeViewItem Header="222"/>
@@ -39,14 +39,15 @@
             </TreeViewItem>
         </TreeView>
         <GridSplitter Grid.Column="0" Grid.Row="1" Width="2" ></GridSplitter>
-        <ScrollViewer Name="MainScrollViewer" HorizontalScrollBarVisibility="Auto"  VerticalScrollBarVisibility="Auto" Grid.Row="1" Grid.Column="1"  Background="Black" HorizontalAlignment="Left" VerticalAlignment="Top" >
-            <DockPanel>
-            <StackPanel Name="LineNumGrid" Background="#CFCFCF" Margin="0" >
+        
+            <DockPanel  Grid.Row="1" Grid.Column="1">
+                <StackPanel Name="LineNumGrid" Background="#CFCFCF" Margin="0" >
                 </StackPanel>
-                <t:TRichTextBox x:Name="RichBox" Width="{Binding ElementName=MainScrollViewer,Path='300'}"   FontSize="{Binding FontSize}" KeyUp="OnKeyUp" PreviewMouseDown="OnMouseClick" TextChanged="ChangeRichText" Margin="0" Padding="0" >
+                <ScrollViewer Name="MainScrollViewer" HorizontalScrollBarVisibility="Auto"  VerticalScrollBarVisibility="Auto"  Background="Black" HorizontalAlignment="Left" VerticalAlignment="Top" >
+                <t:TRichTextBox x:Name="RichBox" Width="1000" HorizontalScrollBarVisibility="Auto"  FontSize="{Binding FontSize}" KeyUp="OnKeyUp" PreviewMouseDown="OnMouseClick" TextChanged="ChangeRichText" Margin="0" Padding="0" >
                         <FlowDocument LineHeight="0.01" Name="FlowDocument" Background="Azure" PagePadding="0" ></FlowDocument>
                 </t:TRichTextBox>
+                </ScrollViewer>
             </DockPanel>
-        </ScrollViewer>
     </Grid>
 </Window>

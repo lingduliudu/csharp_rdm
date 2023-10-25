@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
@@ -20,7 +21,7 @@ namespace WpfApp2{
             InitializeComponent();
             ChangeRichText(RichBox, null);
         }
-
+        
         private void ChangeRichText(object sender, TextChangedEventArgs args){
             initLineNum();
             Dispatcher.BeginInvoke(() =>{
