@@ -22,7 +22,7 @@
         </Grid.ColumnDefinitions>
         <ToolBar Name="MainToolBar" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Padding="10,0"  Header="" VerticalAlignment="Center" >
             <Button  Margin="0,0,3,0">
-                <Image Source="assert/4584440.png"/>
+                <Image Source="assert/add.png"/>
             </Button>
             <Button  Content="这是一个按钮" Margin="0,0,3,0"/>
             <!-- <Rectangle Width="30"   Height="30" Fill="Gainsboro" MouseMove="OnMouseMove"></Rectangle> -->

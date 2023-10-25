@@ -19,7 +19,11 @@
 
     <ItemGroup>
       <None Remove="assert\4584440.png" />
-      <Resource Include="assert\4584440.png">
+      <Resource Include="assert\add.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="assert\setup.png" />
+      <Resource Include="assert\setup.png">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Resource>
     </ItemGroup>
