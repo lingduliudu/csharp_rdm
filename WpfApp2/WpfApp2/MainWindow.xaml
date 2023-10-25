@@ -25,7 +25,6 @@
                 <Image Source="assert/add.png"/>
             </Button>
             <Button  Content="这是一个按钮" Margin="0,0,3,0"/>
-            <!-- <Rectangle Width="30"   Height="30" Fill="Gainsboro" MouseMove="OnMouseMove"></Rectangle> -->
         </ToolBar>
         <TreeView Name="MainTree" Grid.Row="1" Grid.Column="0" Width="200" >
             <TreeViewItem Header="111">
