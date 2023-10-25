@@ -8,6 +8,7 @@ using System.Windows.Controls.Primitives;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Shapes;
 using System.Windows.Threading;
 using WpfApp2.component;
 using WpfApp2.effect;
@@ -19,7 +20,6 @@ namespace WpfApp2{
             InitializeComponent();
             ChangeRichText(RichBox, null);
             RichBox.Width = 2000;
-            navFrame.Navigate(new Page1());
         }
 
         private void ChangeRichText(object sender, TextChangedEventArgs args){
@@ -77,12 +77,6 @@ namespace WpfApp2{
            
         }
 
-        private void ButtonBase_OnClick(object sender, RoutedEventArgs e){
-            navFrame.Navigate(new Page2());
-        }
-
-        
-        
         private void initLineNum(){
              int? lines = FlowDocument?.Blocks?.Count;
              LineNumGrid.Children.Clear();
@@ -121,6 +115,13 @@ namespace WpfApp2{
                 }
             }
         }
+        /**
+         * @Description: 鼠標移動
+         * @author Hao.Yuan
+         */
+        private  void OnMouseMove(object sender,MouseEventArgs args){
+            (sender as Rectangle).Fill = Brushes.Red;
+        }
     }
-    
+
 }

@@ -3,33 +3,37 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:hc="https://handyorg.github.io/handycontrol"
         xmlns:local="clr-namespace:WpfApp2"
         xmlns:t="clr-namespace:WpfApp2.component"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
-        xmlns:model="clr-namespace:WpfApp2.model">
+        xmlns:model="clr-namespace:WpfApp2.model" WindowState="Maximized" ResizeMode="CanMinimize" >
     <Window.DataContext>
         <model:MainModel/>
     </Window.DataContext>
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="150"/>
             <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="2,0,5,0">
-            <TextBox AcceptsReturn="True" Height="21" Width="80"></TextBox>
-            <Button  Grid.Column="0" Height="21" Click="ButtonBase_OnClick"> 按钮</Button>
-            <Frame Name="navFrame" NavigationUIVisibility="Hidden"></Frame>
-        </StackPanel>
-        <GridSplitter Grid.Column="0" Width="2" ></GridSplitter>
-        <ScrollViewer Grid.Column="1"  Background="Black">
+        <ToolBar Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Padding="10,0" Header="" VerticalAlignment="Center" >
+            <Button Style="{StaticResource ButtonInfo}" Margin="0,0,3,0" Content="这是一个按钮" hc:BorderElement.CornerRadius="0"/>
+            <Button  Content="这是一个按钮" Margin="0,0,3,0"/>
+            <Rectangle Width="30"   Height="30" Fill="Gainsboro" MouseMove="OnMouseMove"></Rectangle>
+        </ToolBar>
+        <GridSplitter Grid.Column="0" Grid.Row="1" Width="2" ></GridSplitter>
+        <ScrollViewer Grid.Row="1" Grid.Column="1"  Background="Black">
             <DockPanel>
                 <StackPanel Name="LineNumGrid" Background="#CFCFCF" Margin="0" >
                 </StackPanel>
                 <t:TRichTextBox x:Name="RichBox"    FontSize="{Binding FontSize}" KeyUp="OnKeyUp" PreviewMouseDown="OnMouseClick" TextChanged="ChangeRichText" Margin="0" Padding="0" HorizontalScrollBarVisibility="Auto">
                         <FlowDocument LineHeight="0.01" Name="FlowDocument" Background="Azure" PagePadding="0"  ></FlowDocument>
                 </t:TRichTextBox>
-                
             </DockPanel>
         </ScrollViewer>
     </Grid>

@@ -9,6 +9,5 @@ public class TTextBox:TextBox{
      * @author Hao.Yuan
      */
     public void effectWord(string word){
-        
     }
 }
